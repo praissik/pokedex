@@ -1,0 +1,312 @@
+$bg-color: #d0d0d0;
+$ul-color:#f0f0f0;
+$li-color:#faebd7;
+$img-color: #d8d8d8;
+$footer-color: #909090;
+$orange: #ff5a00;
+
+$small: 2.3;
+$medium: 1.55;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $bg-color;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-color;
+  width: 100%;
+  height: 10vw;
+  border-bottom: solid 0.2vw gray;
+    h1{
+      font-size: 7vw;
+      font-family: monospace;
+      color: $orange;
+    }
+}
+
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-color;
+  width: 100%;
+  height: 7vw;
+  #filter{
+    font-size: 2.5vw;
+    padding-right: 1.5vw;
+  }
+  #select{
+    font-size: 1.8vw;
+    width: 12vw;
+  }
+  #pagination{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 65%;
+  }
+}
+
+article {
+  display: table;
+  background-color: $bg-color;
+  width: 92vw;
+  margin-left: 4vw;
+  float: left;
+    .pagination_bottom_bg, .pagination_bottom_small{
+      margin-top: 3vw;
+      margin-bottom: 5vw;
+      margin-right: 6vw;
+      justify-content: flex-end;
+    }
+    ul#pokemons{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: $ul-color;
+      padding-top: 2vw;
+      padding-bottom: 2vw;
+    }
+    li.data {
+      display: table;
+      background-color: $li-color;
+      flex-basis: 25vw;
+      margin: 2vw;
+      height: 28vw;
+      list-style: none;
+      float: left; 
+      border-radius: 2vw;
+      border: #a0a0a0 solid 0.3vw;
+      vertical-align: bottom;
+        .poke-img{
+          margin-top: 1.5vw;
+          margin-left: 3.2vw;
+          background-color: $img-color;
+          width: 14vw;
+          border: ridge;
+          border-radius: inherit;
+          padding-top: 1vw;
+          padding-left: 2vw;
+          padding-right: 2vw;
+        }
+        .poke-name{
+          text-transform: capitalize;
+          margin-left: 2vw;
+          margin-top: 0.5vw;
+          font-size: 2.5vw;
+        }
+        ul.types{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .type{
+          list-style: none;
+          margin-right: 1vw;
+          margin-left: 1vw;
+        }
+        .poke-type{
+          text-align: center;
+          margin-top: 0.5vw;
+          font-size: 2vw;
+        }
+        .poke-id{
+          float: right;
+          margin-right: 1.5vw;
+          font-size: 2.2vw;
+          margin-top: 1vw;
+        }
+    }
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1.5vw;
+  background-color: $footer-color;
+  width: 100%;
+  height: 2vw;
+  float: right;
+  clear: both;
+  font-size: 1.5vw;
+}
+
+@media (min-width: 651px) and (max-width: 1000px) {
+  header{
+    height: $medium*10vw;
+    border-bottom: solid $medium*0.2vw gray;
+      h1{
+        font-size: $medium*7vw;
+      }
+  }
+
+  nav{
+    height: $medium*7vw;
+    #filter{
+      font-size: $medium*2.5vw;
+    }
+    #select{
+      font-size: $medium*1.8vw;
+      width: $medium*12vw;
+    }
+    #pagination{
+      width: 55%;
+    }
+  }
+
+  article{
+    li.data {
+      flex-basis: $medium*25vw;
+      margin: $medium*2vw;
+      height: $medium*28vw;
+      .poke-img{
+        margin-top: $medium*1.5vw;
+        margin-left: $medium*3.2vw;
+        width: $medium*14vw;
+        padding-top: $medium*1vw;
+        padding-left: $medium*2vw;
+        padding-right: $medium*2vw;
+      }
+      .poke-name{
+        margin-left: $medium*2vw;
+        margin-top: $medium*0.5vw;
+        font-size: $medium*2.5vw;
+      }
+      .type{
+        margin-right: $medium*1vw;
+        margin-left: $medium*1vw;
+      }
+      .poke-type{
+        margin-top: $medium*0.5vw;
+        font-size: $medium*2vw;
+      }
+      .poke-id{
+        margin-right: $medium*1.5vw;
+        font-size: $medium*2.2vw;
+        margin-top: $medium*1vw;
+      }
+    }
+  }
+
+  footer{
+    height: $medium*2vw;
+    font-size: $medium*1.5vw;
+  }
+}
+
+@media (min-width: 851px) {
+  .pagination_top_bg, .pagination_bottom_bg {
+    display: flex;
+  }
+  .pagination_top_small, .pagination_bottom_small{
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .pagination_top_bg, .pagination_bottom_bg {
+    display: none;
+  }
+  .pagination_top_small, .pagination_bottom_small{
+    display: flex;
+  }
+}
+
+@media (max-width: 650px) {
+  header{
+    height: $small*10vw;
+    border-bottom: solid $small*0.2vw gray;
+    h1{
+      font-size: $small*7vw;
+    }
+  }
+
+  nav{
+    height: 30vw;
+    #filter{
+      font-size: $small*2.5vw;
+    }
+    #select{
+      font-size: $small*1.8vw;
+      width: $small*14vw;
+    }
+    #pagination{
+      width: 100%;
+      justify-content: center;
+      clear: both;
+    }
+  }
+
+  article{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    ul#pokemons{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+    li.data {
+      flex-basis: $small*25vw;
+      margin: $small*2vw;
+      height: $small*28vw;
+      .poke-img{
+        margin-top: $small*1.5vw;
+        margin-left: $small*3.2vw;
+        margin-right: $small*3.2vw;
+        width: $small*14vw;
+        padding-top: $small*1vw;
+        padding-left: $small*2vw;
+        padding-right: $small*2vw;
+      }
+      .poke-name{
+        margin-left: $small*2vw;
+        margin-top: $small*0.5vw;
+        font-size: $small*2.5vw;
+      }
+      .type{
+        margin-right: $small*1vw;
+        margin-left: $small*1vw;
+      }
+      .poke-type{
+        margin-top: $small*0.5vw;
+        font-size: $small*2vw;
+      }
+      .poke-id{
+        margin-right: $small*1.5vw;
+        font-size: $small*2.2vw;
+        margin-top: $small*1vw;
+      }
+    }
+    .pagination_bottom_bg, .pagination_bottom_small{
+      margin-right: 0vw;
+    }
+  }
+
+  footer{
+    height: $small*2vw;
+    font-size: $small*1.5vw;
+  }
+}

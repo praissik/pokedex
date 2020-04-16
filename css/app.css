@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #d0d0d0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d0d0d0;
+  width: 100%;
+  height: 10vw;
+  border-bottom: solid 0.2vw gray;
+}
+
+header h1 {
+  font-size: 7vw;
+  font-family: monospace;
+  color: #ff5a00;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #d0d0d0;
+  width: 100%;
+  height: 7vw;
+}
+
+nav #filter {
+  font-size: 2.5vw;
+  padding-right: 1.5vw;
+}
+
+nav #select {
+  font-size: 1.8vw;
+  width: 12vw;
+}
+
+nav #pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 65%;
+}
+
+article {
+  display: table;
+  background-color: #d0d0d0;
+  width: 92vw;
+  margin-left: 4vw;
+  float: left;
+}
+
+article .pagination_bottom_bg,
+article .pagination_bottom_small {
+  margin-top: 3vw;
+  margin-bottom: 5vw;
+  margin-right: 6vw;
+  justify-content: flex-end;
+}
+
+article ul#pokemons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+
+article li.data {
+  display: table;
+  background-color: #faebd7;
+  flex-basis: 25vw;
+  margin: 2vw;
+  height: 28vw;
+  list-style: none;
+  float: left;
+  border-radius: 2vw;
+  border: #a0a0a0 solid 0.3vw;
+  vertical-align: bottom;
+}
+
+article li.data .poke-img {
+  margin-top: 1.5vw;
+  margin-left: 3.2vw;
+  background-color: #d8d8d8;
+  width: 14vw;
+  border: ridge;
+  border-radius: inherit;
+  padding-top: 1vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+article li.data .poke-name {
+  text-transform: capitalize;
+  margin-left: 2vw;
+  margin-top: 0.5vw;
+  font-size: 2.5vw;
+}
+
+article li.data ul.types {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+article li.data .type {
+  list-style: none;
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
+
+article li.data .poke-type {
+  text-align: center;
+  margin-top: 0.5vw;
+  font-size: 2vw;
+}
+
+article li.data .poke-id {
+  float: right;
+  margin-right: 1.5vw;
+  font-size: 2.2vw;
+  margin-top: 1vw;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1.5vw;
+  background-color: #909090;
+  width: 100%;
+  height: 2vw;
+  float: right;
+  clear: both;
+  font-size: 1.5vw;
+}
+
+@media (min-width: 651px) and (max-width: 1000px) {
+  header {
+    height: 15.5vw;
+    border-bottom: solid 0.31vw gray;
+  }
+
+  header h1 {
+    font-size: 10.85vw;
+  }
+
+  nav {
+    height: 10.85vw;
+  }
+
+  nav #filter {
+    font-size: 3.875vw;
+  }
+
+  nav #select {
+    font-size: 2.79vw;
+    width: 18.6vw;
+  }
+
+  nav #pagination {
+    width: 55%;
+  }
+
+  article li.data {
+    flex-basis: 38.75vw;
+    margin: 3.1vw;
+    height: 43.4vw;
+  }
+
+  article li.data .poke-img {
+    margin-top: 2.325vw;
+    margin-left: 4.96vw;
+    width: 21.7vw;
+    padding-top: 1.55vw;
+    padding-left: 3.1vw;
+    padding-right: 3.1vw;
+  }
+
+  article li.data .poke-name {
+    margin-left: 3.1vw;
+    margin-top: 0.775vw;
+    font-size: 3.875vw;
+  }
+
+  article li.data .type {
+    margin-right: 1.55vw;
+    margin-left: 1.55vw;
+  }
+
+  article li.data .poke-type {
+    margin-top: 0.775vw;
+    font-size: 3.1vw;
+  }
+
+  article li.data .poke-id {
+    margin-right: 2.325vw;
+    font-size: 3.41vw;
+    margin-top: 1.55vw;
+  }
+
+  footer {
+    height: 3.1vw;
+    font-size: 2.325vw;
+  }
+}
+
+@media (min-width: 851px) {
+  .pagination_top_bg,
+  .pagination_bottom_bg {
+    display: flex;
+  }
+
+  .pagination_top_small,
+  .pagination_bottom_small {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .pagination_top_bg,
+  .pagination_bottom_bg {
+    display: none;
+  }
+
+  .pagination_top_small,
+  .pagination_bottom_small {
+    display: flex;
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    height: 23vw;
+    border-bottom: solid 0.46vw gray;
+  }
+
+  header h1 {
+    font-size: 16.1vw;
+  }
+
+  nav {
+    height: 30vw;
+  }
+
+  nav #filter {
+    font-size: 5.75vw;
+  }
+
+  nav #select {
+    font-size: 4.14vw;
+    width: 32.2vw;
+  }
+
+  nav #pagination {
+    width: 100%;
+    justify-content: center;
+    clear: both;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  article ul#pokemons {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+
+  article li.data {
+    flex-basis: 57.5vw;
+    margin: 4.6vw;
+    height: 64.4vw;
+  }
+
+  article li.data .poke-img {
+    margin-top: 3.45vw;
+    margin-left: 7.36vw;
+    margin-right: 7.36vw;
+    width: 32.2vw;
+    padding-top: 2.3vw;
+    padding-left: 4.6vw;
+    padding-right: 4.6vw;
+  }
+
+  article li.data .poke-name {
+    margin-left: 4.6vw;
+    margin-top: 1.15vw;
+    font-size: 5.75vw;
+  }
+
+  article li.data .type {
+    margin-right: 2.3vw;
+    margin-left: 2.3vw;
+  }
+
+  article li.data .poke-type {
+    margin-top: 1.15vw;
+    font-size: 4.6vw;
+  }
+
+  article li.data .poke-id {
+    margin-right: 3.45vw;
+    font-size: 5.06vw;
+    margin-top: 2.3vw;
+  }
+
+  article .pagination_bottom_bg,
+  article .pagination_bottom_small {
+    margin-right: 0vw;
+  }
+
+  footer {
+    height: 4.6vw;
+    font-size: 3.45vw;
+  }
+}
+
